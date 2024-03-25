@@ -18,13 +18,11 @@ dependencies {
     annotationProcessor("io.micronaut.data:micronaut-data-processor")
     annotationProcessor("io.micronaut:micronaut-http-validation")
     annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
-    // implementation("org.eclipse.angus:angus-mail")
-    // implementation("jakarta.mail:jakarta.mail-api")
-    implementation("io.micronaut.data:micronaut-data-jdbc")
-    implementation("io.micronaut.kafka:micronaut-kafka")
-    // implementation("io.micronaut.aws:micronaut-aws-sdk-v2")
-    // implementation("software.amazon.awssdk:dynamodb")
     annotationProcessor("io.micronaut.validation:micronaut-validation-processor")
+    implementation("io.micronaut.aws:micronaut-aws-sdk-v2")
+    implementation("io.micronaut.jms:micronaut-jms-sqs")
+    implementation("io.micronaut.data:micronaut-data-jdbc")
+    // implementation("io.micronaut.kafka:micronaut-kafka")
     implementation("io.micronaut.crac:micronaut-crac")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
@@ -39,6 +37,10 @@ dependencies {
     runtimeOnly("org.postgresql:postgresql")
     runtimeOnly("org.flywaydb:flyway-database-postgresql")
     testImplementation("io.micronaut:micronaut-http-client")
+    // testImplementation("org.awaitility:awaitility:4.2.0")
+    // testImplementation("org.testcontainers:junit-jupiter")
+    // testImplementation("org.testcontainers:localstack")
+    // testImplementation("org.testcontainers:testcontainers")
 }
 
 

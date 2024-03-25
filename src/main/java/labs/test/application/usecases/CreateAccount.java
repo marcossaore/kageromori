@@ -24,6 +24,7 @@ public class CreateAccount {
         }
         AccountModel newAccount = AccountModel.fromAggregate(account);
         accountRepository.save(newAccount);
-        inviteClient.sendProduct(account.getAccountId(), account.getInviteAccountIdAsUuid(), account.getEmail());
+        inviteClient.sendProduct(account.getAccountId().toString());
+        // inviteClient.sendProduct(account.getAccountId(), account.getInviteAccountIdAsUuid(), account.getEmail());
     }
 }

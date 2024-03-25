@@ -3,5 +3,5 @@ defaultPackage: labs.test
 testFramework: junit
 sourceLanguage: java
 buildTool: gradle
-# aws-v2-sdk, dynamodb,
-[app-name, gradle, http-client-test, jakarta.mail-api, java, java-application, junit, logback, lombok, micronaut-aot, micronaut-build, micronaut-http-validation, netty-server, properties, readme, serialization-jackson, shade, static-resources, validation, h2, jdbc-hikari, kafka]
+# aws-v2-sdk, dynamodb, kafka
+[app-name, awaitility, aws-v2-sdk, gradle, http-client-test, jakarta.mail-api, java, java-application, jms-sqs,  junit, localstack, logback, lombok, micronaut-aot, micronaut-build, micronaut-http-validation, netty-server, properties, readme, serialization-jackson, shade, static-resources, validation, h2, jdbc-hikari, testcontainers]
