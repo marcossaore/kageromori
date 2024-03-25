@@ -3,7 +3,6 @@ version: '3.8'
 services:
   db:
     image: postgres:latest
-    container_name: postgres_demo
     environment:
       POSTGRES_USER: postgresUser
       POSTGRES_PASSWORD: postgresPW
@@ -15,7 +14,6 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4
-    container_name: pgadmin
     environment:
       PGADMIN_DEFAULT_EMAIL: pg@pg.com
       PGADMIN_DEFAULT_PASSWORD: dev
@@ -65,7 +63,7 @@ services:
   localstack:
     image: localstack/localstack:latest
     environment:
-      - SERVICES=sqs,sns,dynamodb
+      - SERVICES=sqs,sns,dynamodb,ses
       - AWS_DEFAULT_REGION=us-east-1
       - EDGE_PORT=4566
       - AWS_ACCESS_KEY_ID=dummy
@@ -87,5 +85,21 @@ services:
       # https://guides.micronaut.io/latest/micronaut-jms-aws-sqs-gradle-java.html
       
       # https://www.youtube.com/watch?v=c3atABOZ2xI&list=PLkX9oUrQ1ev5kA20Es7aFk5DAho16YDzz&index=19
+
+
+  mailpit:
+    image: axllent/mailpit:v1.13
+    ports:
+      - 8025:8025
+      - 1025:1025
+    environment:
+      MP_MAX_MESSAGES: 5000
+      #   MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1
+      # MP_SMTP_AUTH: ${MAIL_USERNAME}:${MAIL_PASSWORD}
+    networks:
+      - kageromori
+
+networks:
   kageromori:
     driver: bridge
